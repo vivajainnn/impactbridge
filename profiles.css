@@ -1,0 +1,139 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    background: url('profile.jpg 2024-08-12 at 2.48.40 PM.jpeg') no-repeat;
+    background-size: cover;
+}
+header {
+    position:fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    padding: 0.5px 100px; 
+    background:#A7C7E7;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    z-index: 99;
+    }
+    .logo{
+     font-size: 2em; 
+     color:#fff;
+     user-select: none;
+    }
+    .navigation a {
+        position: relative; 
+        font-size: 1.1em;
+        color:#fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 40px;
+    }
+    .navigation a::after {
+       content: '';
+       position: absolute;
+       left: 0;
+       bottom: -6px;
+       width: 100%; 
+       height: 3px;
+       background: #fff;
+       border-radius: 5px;
+       transform-origin: right;
+       transform: scaleX(0);
+       transition: transform 0.5s ease;
+    }
+    .navigation a:hover::after{
+        transform-origin: left;
+        transform: scaleX(1);
+    
+    }
+
+
+.profiles-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #0073b1;
+    transition: transform 0.2s;
+}
+
+.profiles-container:hover {
+    transform: scale(1.01);
+}
+
+.profiles-header {
+    text-align: center;
+    margin-top: 50px;
+    color: #0073b1;
+}
+
+.profiles-header h1 {
+    font-size: 26px;
+    color: #333333;
+}
+
+.profiles-form .form-group {
+    margin-bottom: 20px;
+}
+
+.profiles-form .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0073b1;
+}
+
+.profiles-form .form-group input[type="text"],
+.profiles-form .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333333;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border 0.3s;
+}
+
+.profiles-form .form-group input[type="text"]:focus,
+.profiles-form .form-group textarea:focus {
+    border-color: #ffeb3b;
+    outline: none;
+}
+
+.profiles-form .form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.profiles-form .form-group button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #ffeb3b;
+    color: #0073b1;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.profiles-form .form-group button:hover {
+    background-color: #ffc107;
+    transform: translateY(-2px);
+}
+
+.profiles-form .form-group button:active {
+    background-color: #ffb300;
+    transform: translateY(0);
+}
+
