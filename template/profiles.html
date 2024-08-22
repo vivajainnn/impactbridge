@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='profiles.css') }}">
+    
+
+</head>
+<body>
+    <header>
+        <h2 class="logo">IMPACT BRIDGE</h2>
+        <nav class="navigation">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('explore') }}">Explore</a>
+            <a href="{{ url_for('login_page') }}">Login</a>
+            <a href="{{ url_for('profiles') }}">Profile</a>
+        </nav>
+    </header>
+   
+    
+    <div class="profiles-container">
+        <div class="profiles-header">
+            <h1>Profile</h1>
+        </div>
+        <form class="profiles-form" method="POST" action="{{ url_for('profiles') }}">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" value="{{ profile['name'] if profile else '' }}">
+            </div>
+        
+            <div class="form-group">
+                <label for="qualifications">Qualifications</label>
+                <textarea id="qualifications" name="qualifications" placeholder="Enter your qualifications">{{ profile['qualifications'] if profile else '' }}</textarea>
+            </div>
+        
+            <div class="form-group">
+                <label for="availability">Availability</label>
+                <input type="text" id="availability" name="availability" placeholder="Enter your availability" value="{{ profile['availability'] if profile else '' }}">
+            </div>
+        
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter your location" value="{{ profile['location'] if profile else '' }}">
+            </div>
+        
+            <div class="form-group">
+                <label for="experience">Experience</label>
+                <textarea id="experience" name="experience" placeholder="Enter your experience">{{ profile['experience'] if profile else '' }}</textarea>
+            </div>
+        
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <input type="text" id="skills" name="skills" placeholder="Enter your skills" value="{{ profile['skills'] if profile else '' }}">
+            </div>
+        
+            <div class="form-group">
+                <label for="education">Education</label>
+                <textarea id="education" name="education" placeholder="Enter your education details">{{ profile['education'] if profile else '' }}</textarea>
+            </div>
+        
+            <div class="form-group">
+                <button type="submit">Save Profile</button>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>

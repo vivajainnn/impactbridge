@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - Impact Bridge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='explore.css') }}">
+</head>
+<body>
+    <header>
+        <h2 class="logo">IMPACT BRIDGE</h2>
+        <nav class="navigation">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('explore') }}">Explore</a>
+            <a href="{{ url_for('login_page') }}">Login</a>
+            <a href="{{ url_for('profiles') }}">Profile</a>
+        
+        </nav>
+        
+    </header>
+   
+
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search NGOs or Posts...">
+        <button>Search</button>
+    </div>
+
+    <div class="feed">
+        {% for post in posts %}
+        <div class="post">
+            <h3>{{ post.ngo_name }}</h3>
+            <p>{{ post.content }}</p>
+            <p><strong>Posted by : {{ post.posted_by }}</p>
+            <button>Contact</button>
+        </div>
+        {% endfor %}
+    </div>
+    
+    
+    </div>
+
+    <div class="post-form">
+        <h3>Post an Update</h3>
+        <form action="/post" method="POST">
+            <textarea name="post_content" placeholder="Write something..."></textarea>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.5.0/dist/ionicons.js"></script>
+    <script>
+        document.querySelector('.search-bar input').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            let posts = document.querySelectorAll('.post');
+    
+            posts.forEach(function(post) {
+                let ngoName = post.querySelector('h3').textContent.toLowerCase();
+                let content = post.querySelector('p').textContent.toLowerCase();
+                if (ngoName.includes(filter) || content.includes(filter)) {
+                    post.style.display = '';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
