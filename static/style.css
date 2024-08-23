@@ -11,7 +11,7 @@ display: flex;
 justify-content: center; 
 align-items: center;
 min-height: 100vh;
-background: url('background.jpg\ 2024-08-11\ at\ 2.58.01\ AM.jpeg') no-repeat;
+background: url('"C:\Users\Arshiya\impactbridge\static\background.jpg 2024-08-11 at 2.58.01 AM - Shortcut.lnk"') no-repeat;
 background-size: cover;
 background-position: center;
 }

@@ -209,7 +209,7 @@ header {
 .contact-section {
     padding: 50px;
     background-color: #fff;
-    text-align: center;
+    text-align: center; /* Center-align the text */
 }
 
 .contact-section h2 {
@@ -217,21 +217,15 @@ header {
     margin-bottom: 20px;
 }
 
-.contact-section form {
-    max-width: 600px;
-    margin: 0 auto;
+.contact-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 600px; /* Optional: Limit the width of the paragraph for better readability */
+    margin-left: auto; /* Center-align the paragraph */
+    margin-right: auto; /* Center-align the paragraph */
 }
 
-.contact-section input, .contact-section textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1.1em;
-}
-
-.contact-section button {
+.send-message-button {
     background-color: #c2eefb;
     color: #fff;
     padding: 15px 30px;
@@ -239,11 +233,15 @@ header {
     border-radius: 5px;
     font-size: 1.2em;
     cursor: pointer;
+    text-decoration: none; /* Ensures the button looks like a button and not a link */
+    display: inline-block;
+    margin-top: 20px; /* Add some space above the button */
 }
 
-.contact-section button:hover {
-    background-color: #c2eefb;
+.send-message-button:hover {
+    background-color: #7cbcfc;
 }
+
 
 /* Footer */
 footer {
